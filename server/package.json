@@ -1,0 +1,34 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Damjan Vujnovic",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "eslint": "5.13.0",
+    "jest": "24.1.0",
+    "prettier": "1.16.4"
+  },
+  "dependencies": {
+    "node-fetch": "2.3.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": "2018"
+    },
+    "extends": "eslint:recommended",
+    "env": {
+      "es6": true,
+      "jest": true,
+      "node": true
+    }
+  },
+  "prettier": {
+    "printWidth": 140,
+    "singleQuote": true
+  }
+}
