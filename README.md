@@ -26,3 +26,12 @@ For apps that have tests, run them using:
 ```bash
 npm test
 ```
+
+## TODO
+
+purchaseTicket
+
+- rng
+- ticketRepository
+- http
+- wallet
