@@ -16,6 +16,10 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "prettier": {
+    "printWidth": 140,
+    "singleQuote": true
+  },
   "browserslist": [
     ">0.2%",
     "not dead",

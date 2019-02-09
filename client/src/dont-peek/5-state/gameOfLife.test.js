@@ -1,4 +1,4 @@
-const GameOfLife = require('./gameOfLife');
+import GameOfLife from './gameOfLife';
 
 describe('Game of Life', function() {
   let gameOfLife;
