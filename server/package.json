@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Damjan Vujnovic",
@@ -11,10 +12,13 @@
   "devDependencies": {
     "eslint": "5.13.0",
     "jest": "24.1.0",
+    "nodemon": "1.18.10",
     "prettier": "1.16.4"
   },
   "dependencies": {
-    "node-fetch": "2.3.0"
+    "jsonwebtoken": "^8.4.0",
+    "node-fetch": "2.3.0",
+    "sqlite3": "4.0.6"
   },
   "eslintConfig": {
     "parserOptions": {
