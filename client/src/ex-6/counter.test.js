@@ -10,6 +10,14 @@ describe('Counter', function() {
     valueChangedListener = jest.fn().mockName('valueChangedListener');
     counter.addEventListener('valueChanged', valueChangedListener);
   });
+  test('should have 0 as initial value', function() {
+    expect(counter.getValue()).toBe(0);
+  });
+  test('should increment value by 1 when increment method is invoked', function() {
+    counter.increment();
+
+    expect(counter.getValue()).toBe(1);
+  });
   test('should dispatch valueChanged event when counter is incremented', function() {
     counter.increment();
 
@@ -17,52 +25,35 @@ describe('Counter', function() {
   });
 });
 
-// prettier-ignore
 describe('Counter Widget', function() {
   let counter;
   let widget;
   beforeEach(function() {
     counter = observable({
+      getValue: () => 0,
       increment: jest.fn().mockName('increment')
     });
     widget = jQuery('body')
-      .append(`<div id='gameOfLifeWidget'>
-          <table class='grid'>
-            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          </table>
-          <input type='button' class='tick' value='tick'></input>
-        </div>`)
-      .gameOfLifeWidget(gameOfLife, 10, 10);
+      .empty()
+      .append(
+        `<div>
+          <input type='button' class='increment' value='increment'></input>
+          <span class='value'></span>
+        </div>`
+      )
+      .counterWidget(counter);
   });
-  test('should call tick method when tick button is clicked', function() {
-    widget.find('.tick').click();
-
-    expect(gameOfLife.tick).toHaveBeenCalled();
+  test('should initially show the counter value', function() {
+    expect(widget.find('.value').text()).toBe('0');
   });
-  test('should call toggleCellState method when a table cell is clicked', function() {
-    widget.find('.grid tr:nth-child(4) td:nth-child(5)').click();
+  test('should call increment method when increment button is clicked', function() {
+    widget.find('.increment').click();
 
-    expect(gameOfLife.toggleCellState).toHaveBeenCalledWith(3, 4);
+    expect(counter.increment).toHaveBeenCalled();
   });
-  test('should add class alive when cell becomes alive', function() {
-    gameOfLife.dispatchEvent('cellStateChanged', 3, 4, true);
+  test('should update the value in DOM when valueChanged event is dispatched', function() {
+    counter.dispatchEvent('valueChanged', 123);
 
-    expect(widget.find('.grid tr:nth-child(4) td:nth-child(5)').hasClass('alive')).toBe(true);
-  });
-  test('should remove class alive when cell dies', function() {
-    gameOfLife.dispatchEvent('cellStateChanged', 3, 4, true);
-
-    gameOfLife.dispatchEvent('cellStateChanged', 3, 4, false);
-
-    expect(widget.find('.grid tr:nth-child(4) td:nth-child(5)').hasClass('alive')).toBe(false);
+    expect(widget.find('.value').text()).toBe('123');
   });
 });

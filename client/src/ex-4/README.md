@@ -1,6 +1,6 @@
 ## Exercise 1
 
-Message of the day
+Test-drive a MessageOfTheDay class that can be used to randomly select a message from the predefined array of messages (see below).
 
 ```javascript
 const messages = [

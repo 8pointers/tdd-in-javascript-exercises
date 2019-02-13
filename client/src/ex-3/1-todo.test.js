@@ -1,4 +1,4 @@
-import Todo from './todo';
+import Todo from './1-todo';
 
 describe('Todo', function() {
   let todo;

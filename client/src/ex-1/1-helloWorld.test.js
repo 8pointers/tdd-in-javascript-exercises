@@ -1,4 +1,4 @@
-import greet from './helloWorld';
+import greet from './1-helloWorld';
 
 describe('Greeter', function() {
   it('should say Hello World! when no name is provided', function() {

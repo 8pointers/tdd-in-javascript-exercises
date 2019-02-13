@@ -1,6 +1,7 @@
 ## Exercise 1
 
-Implement a GameOfLife class.
+Implement a GameOfLife class/constructor function/factory function (whatever the preference) so that:
 
-- It should be able to keep track of the state of the game.
-- It should allow the state of any cell to be toggled.
+- it can keep track of the state of the game
+- it allows the state of any cell to be toggled (if it was alive it should die, if it was dead it should become alive)
+- it can compute and put game in the next state

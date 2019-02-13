@@ -15,6 +15,7 @@ class Counter {
 jQuery.fn.counterWidget = function(counter) {
   return this.each(function() {
     const widgetRoot = jQuery(this);
+    console.log(widgetRoot);
     const updateValue = value => widgetRoot.find('.value').text(value);
     updateValue(counter.getValue());
     widgetRoot.find('.increment').click(counter.increment);
