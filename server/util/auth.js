@@ -22,7 +22,7 @@ class AuthService {
   login(username, password) {
     const user = this.users.find(user => user.username === username && user.password === password);
     if (!user) {
-      return Promise.reject(new Error('loginFailed'));
+      return Promise.reject('loginFailed');
     }
     return Promise.resolve(this.jwtService.sign({ playerId: user.id }));
   }

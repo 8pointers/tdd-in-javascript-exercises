@@ -1,4 +1,4 @@
-import observable from './1-observable';
+import observable from './observable';
 
 // prettier-ignore
 describe('observable', function() {

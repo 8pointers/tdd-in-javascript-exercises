@@ -25,7 +25,17 @@ describe('http rpc', function() {
       expect(e).toEqual(new Error('notAuthorised'));
     }
   });
-  it('should be able to invoke protected methods', async function() {
+
+  it('should not be able to login with incorrect password', async function() {
+    expect.assertions(1);
+    try {
+      await rpc('authService', 'login', 'user1@user.com', 'password2');
+    } catch (e) {
+      expect(e).toEqual(new Error('loginFailed'));
+    }
+  });
+
+  it('should be able to invoke protected methods after successful login', async function() {
     const token = await rpc('authService', 'login', 'user1@user.com', 'password1');
     const authRpc = rpcFactory(token);
     const result = await authRpc('echoService', 'withAuth', 'World');

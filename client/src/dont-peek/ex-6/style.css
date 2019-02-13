@@ -1,0 +1,9 @@
+td {
+  background-color: #e0c020;
+  width: 16px;
+  height: 16px;
+}
+
+td.alive {
+  background-color: #4040c0;
+}
