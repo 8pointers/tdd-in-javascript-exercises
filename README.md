@@ -13,25 +13,13 @@
 ## Running the apps
 
 ```bash
-git clone -c core.symlinks=true https://bitbucket.org/8pointers/reactive-workshop-exercises.git
-cd reactive-workshop-exercises
+git clone https://github.com/8pointers/tdd-in-javascript-exercises.git
+cd tdd-in-javascript-exercises
 npm install
-
-cd 01-intro
-npm start
 ```
 
-For apps that have tests, run them using:
+Run tests using:
 
 ```bash
 npm test
 ```
-
-## TODO
-
-purchaseTicket
-
-- rng
-- ticketRepository
-- http
-- wallet
