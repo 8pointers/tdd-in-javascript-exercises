@@ -12,3 +12,7 @@ const messages = [
   'Good design adds value faster than it adds cost.'
 ];
 ```
+
+## Exercise 2
+
+For brownie points, try and refactor your solution so that it does not use classes/objects (only 'normal' functions).

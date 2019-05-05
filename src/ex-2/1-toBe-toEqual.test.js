@@ -1,4 +1,4 @@
-describe('more matchers', function() {
+describe('Matching objects', function() {
   it('should understand the difference between .toBe and .toEqual', function() {
     const person1 = { name: 'Myamoto', age: 23, address: { street: 'Samurai Way', postcode: 'GU-XXX' } };
     const person2 = person1;
