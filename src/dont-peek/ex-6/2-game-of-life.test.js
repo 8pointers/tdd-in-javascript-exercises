@@ -1,5 +1,5 @@
 import jQuery from 'jquery';
-import GameOfLife from './2-game-of-life';
+import GameOfLife from './game-of-life';
 import observable from './1-observable';
 
 // prettier-ignore

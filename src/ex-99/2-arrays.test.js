@@ -32,7 +32,7 @@ describe('arrays', function() {
     expect(samurai.reduce((acc, s) => acc + s.age, 0)).toEqual(__);
   });
   test('should understand Array.prototype.reduce 2', function() {
-    Array.prototype.myReduce = function(fn) {
+    Array.prototype.myReduce = function(fn, acc) {
       //TODO implement without using any of the Array.prototype.methods
     };
     const samurai = [{ name: 'Myamoto', age: 23 }, { name: 'Hattori', age: 34 }, { name: 'Shimazo', age: 45 }];

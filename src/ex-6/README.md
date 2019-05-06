@@ -1,6 +1,8 @@
 ## Exercise 1
 
-Implement the observable mixin by making all the specs from 1-observable.test.js pass
+Test-drive the observable mixin. You should be able to add and remove listeners of different types, specify their priority (order of invocation) and handle mis-behaving listeners. There should be a way of stopping the event propagation.
+
+For brownie points, add the support for observable properties.
 
 ## Exercise 2
 
